@@ -5,6 +5,7 @@ import os
 from dotenv import load_dotenv
 from auth_utils import AuthJwtCsrf
 from fastapi import HTTPException
+import asyncio
 
 # 環境変数の読み込み
 load_dotenv()
@@ -12,6 +13,7 @@ MONGO_API_KEY = os.environ['MONGO_API_KEY']
 
 # クライアント作成
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_API_KEY)
+client.get_io_loop = asyncio.get_event_loop #<-追加
 
 # databaseとコレクションをAPIで使用出来る様にする
 # mongoDBでcreateしたDBを指定

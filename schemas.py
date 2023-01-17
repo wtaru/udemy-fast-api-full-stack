@@ -33,3 +33,8 @@ class UserBody(BaseModel):
 class UserInfo(BaseModel):
     email: str
     id: Optional[str] = None
+
+# CSRF token 生成型の指定
+class Csrf(BaseModel):
+    csrf_token: str
+
