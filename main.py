@@ -25,7 +25,7 @@ app.add_middleware(
 )
 
 # セキュリティ対策の初期設定（ライブラリ参照）
-@CsrfProtect.load_config()
+@CsrfProtect.load_config
 def get_csrf_config():
     return CsrfSettings()
 
