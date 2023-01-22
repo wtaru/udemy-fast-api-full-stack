@@ -14,7 +14,7 @@ app.include_router(todo.router)
 app.include_router(auth.router)
 
 # front end のドメインを記載
-origins = ["http://localhost:3000"]
+origins = ["http://localhost:3000", "https://fastapi-6d6c5.web.app"]
 # CORSの設定をappに追加
 app.add_middleware(
     CORSMiddleware,
